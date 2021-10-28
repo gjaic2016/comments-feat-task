@@ -1,11 +1,8 @@
 import React from "react";
 
 const Comment = (props) => {
-
-  
   const formatTimestamp = (timestamp) => {
     let newDate = new Date(timestamp);
-    console.log(newDate);
     let formatedTime = newDate.toLocaleTimeString();
     return formatedTime;
   };
@@ -16,7 +13,6 @@ const Comment = (props) => {
         <div className="message__column">
           <div className="message__img">
             <img
-              // src={avatarSort(images,props.authorPicture)}
               src={props.authorPicture}
               className="avatar-logo"
               alt={props.authorPicture}
@@ -30,7 +26,10 @@ const Comment = (props) => {
           </div>
           <div className="message__time-reply">
             <div>{formatTimestamp(props.timestamp)}</div>
-            <div className="message__reply">Reply</div>
+            <div className="message__reply">
+              <a type="link">Reply</a>{" "}
+              {props.reply > 0 ? "(" + props.reply + ")" : ""}
+            </div>
           </div>
         </div>
       </div>
