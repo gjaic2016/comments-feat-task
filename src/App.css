@@ -56,6 +56,10 @@
   align-items: center;
 }
 
+.message__repplied {
+  margin-left:50px;
+}
+
 .message__column {
   display: flex;
   flex-direction: column;
@@ -166,3 +170,4 @@
   height: 15px;
   width: 15px;
 }
+

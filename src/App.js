@@ -17,12 +17,26 @@ function App() {
     return reply;
   };
 
+  const isReply = (parent) => {
+    let hasReply = false;
+
+    if (parent) {
+      hasReply = !hasReply;
+    }
+    return hasReply;
+  };
+
   const messageDate = (message) => {
-    let options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    var timestamp = message.find(element => element.id === "1").timestamp;
-    var day = new Date(timestamp).toLocaleDateString('en-US', options);
+    let options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    var timestamp = message.find((element) => element.id === "1").timestamp;
+    var day = new Date(timestamp).toLocaleDateString("en-US", options);
     return day;
-  }
+  };
 
   return (
     <div className="App">
@@ -40,6 +54,7 @@ function App() {
                   authorPicture={value.author.picture}
                   text={value.text}
                   timestamp={value.timestamp}
+                  replied={isReply(value.parent_id)}
                 />
               </>
             );
