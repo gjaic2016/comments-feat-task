@@ -9,6 +9,7 @@ const Comment = (props) => {
 
   return (
     <>
+      <div className="message__date">{props.day}</div>
       <div className={props.replied ? "message message__repplied" : "message"}>
         <div className="message__column">
           <div className="message__img">

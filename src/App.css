@@ -67,8 +67,9 @@
 }
 
 .message__date {
-  font-size: small;
+  font-size: x-small;
   color: var(--gray-color);
+  margin: 20px 0px 15px 0px;
 }
 
 .message__column2 {
@@ -115,6 +116,7 @@
 }
 
 .message__time-reply {
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   text-align: left;
