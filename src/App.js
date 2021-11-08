@@ -2,7 +2,6 @@ import "./App.css";
 import jsonFile from "../src/Data/comments.json";
 import Comment from "../src/Components/Comment";
 import NewMessage from "./Components/NewMessage";
-import format from 'date-fns/format'
 
 function App() {
   const message = jsonFile.data.comments;
@@ -30,10 +29,10 @@ function App() {
   let dayToCheck = "";
   const showDay = (timestamp) => {
     
-    var day = new Date(timestamp).toLocaleDateString("en-US", {
+    var day = new Date(timestamp).toLocaleDateString("hr-HR", {
       weekday: "long",
       year: "numeric",
-      month: "long",
+      month: "2-digit",
       day: "numeric",
     });
     
@@ -41,8 +40,13 @@ function App() {
     if (dayToCheck === day) {
       return "";
     } else {
-      dayToCheck = day;
-      return day;
+      if(dayToCheck > day) {
+        return "Danas";
+      }
+      else {
+        dayToCheck = day;
+        return day;
+      }
     }
   };
 
