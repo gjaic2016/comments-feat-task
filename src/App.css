@@ -1,4 +1,5 @@
 :root {
+  background-color: var(--darkblue-color);
   --white-color: #fff;
   --darkblue-color: #023168; 
   --lightgrey-color: #eceef1;
@@ -32,19 +33,18 @@
 }
 
 .App-body {
-  background-color: var(--darkblue-color);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 }
 
 .chat_window {
   background-color: var(--lightgrey-color);
+  position: absolute;
   width: 1032px;
-  min-height: 864px;
-  border-radius: 5px;
+  height: 864px;
+  left: 204px;
+  right: 204px;
+  top: 80px;
+  border-radius: 8px;
   padding: 1em;
 }
 
@@ -83,7 +83,7 @@
 }
 
 .message__img {
-  margin: -70px 10px 0px 10px;
+  margin: -80px 12px 0px 10px;
   border: 1px solid var(--white-color);
   height: 48px;
   width: 48px;
@@ -96,9 +96,8 @@
   text-align: left;
   background-color: var(--white-color);
   border: 1px solid #D8DEE7;
-  min-height: 104px;
+  height: 104px;
   width: max-content;
-  max-width: 80%;
   border-radius: 8px;
   overflow-wrap: break-word;
   padding: 10px 10px 0px 10px;
@@ -111,9 +110,7 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
-  /* font-weight: bold;
-  cursor: pointer;
-  padding-bottom: 10px; */
+ padding-bottom: 12px;
 }
 
 .message__text {
@@ -126,13 +123,11 @@
 }
 
 .message__time-reply {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 12px;
+  margin-bottom: 24px;
   display: flex;
   flex-direction: row;
   text-align: left;
-  /* font-size: small; */
-  /* color: var(--gray-color); */
   font-family: Inter;
   font-style: normal;
   font-weight: 500;
@@ -153,14 +148,18 @@
 }
 
 .new__message {
+  position: absolute;
+  height: 72px;
+  left: 32px;
+  right: 32px;
+  bottom: 32px;
   display: flex;
   flex-direction: row;
   border: 1px solid #D8DEE7;
   background-color: var(--white-color);
-  z-index: 99;
   padding: 5px;
-  border-radius: 8px;
   box-sizing: border-box;
+  border-radius: 8px;
 }
 
 .message__input {
@@ -175,8 +174,10 @@
 }
 
 .button__new {
+  position: absolute;
   border-radius: 6px;
-  width: 50px;
+  width: 56px;
+  height: 56px;
   background-color: var(--darkblue-color);
   color: var(--white-color);
   cursor: pointer;
@@ -194,5 +195,10 @@
   margin-right: 5px;
   height: 15px;
   width: 15px;
+}
+
+.button__positive{
+  margin: -4px;
+  filter: brightness(0) invert(1);
 }
 
