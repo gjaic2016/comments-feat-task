@@ -110,7 +110,7 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
- padding-bottom: 12px;
+  padding: 12px 0px 12px 24px;
 }
 
 .message__text {
@@ -120,6 +120,8 @@
   font-size: 18px;
   line-height: 22px;
   color: #82878D;
+  padding: 0px 24px 24px 24px;
+  word-wrap: normal;
 }
 
 .message__time-reply {

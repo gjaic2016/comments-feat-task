@@ -50,23 +50,59 @@ function App() {
     }
   };
 
+  let messagesArr = [];
+  const recursion = (comments) => {
+    if (comments.length === 0) {
+      return;
+    }
+    
+    const myMessage = comments[0];
+    messagesArr.push({
+      key: myMessage.id,
+      id: myMessage.id,
+      reply: checkReply(message, myMessage.id),
+      authorName: myMessage.author.name,
+      authorPicture: myMessage.author.picture,
+      text: myMessage.text,
+      timestamp: myMessage.timestamp,
+      replied: isReply(myMessage.parent_id)
+    });
+
+    recursion(comments.slice(1));
+  };
+
+  // const etl = (comment) => {
+  //   return {
+  //     key: comment.id,
+  //     id: comment.id,
+  //     reply: checkReply(message, comment.id),
+  //     authorName: comment.author.name,
+  //     authorPicture: comment.author.picture,
+  //     text: comment.text,
+  //     timestamp: comment.timestamp,
+  //     replied: isReply(comment.parent_id)
+  //   };
+  // };
+
+  recursion(message);
+
   return (
     <div className="App">
       <div className="App-body">
         <div className="chat_window">
-          {message.map((value) => {
+          {messagesArr.map((value) => {
             return (
               <>
                 <Comment
                   day={showDay(value.timestamp)}
                   key={value.id}
                   id={value.id}
-                  reply={checkReply(message, value.id, value.timestamp)}
-                  authorName={value.author.name}
-                  authorPicture={value.author.picture}
+                  reply={value.reply}
+                  authorName={value.authorName}
+                  authorPicture={value.authorPicture}
                   text={value.text}
                   timestamp={value.timestamp}
-                  replied={isReply(value.parent_id)}
+                  replied={value.replied}
                 />
               </>
             );
