@@ -71,19 +71,6 @@ function App() {
     recursion(comments.slice(1));
   };
 
-  // const etl = (comment) => {
-  //   return {
-  //     key: comment.id,
-  //     id: comment.id,
-  //     reply: checkReply(message, comment.id),
-  //     authorName: comment.author.name,
-  //     authorPicture: comment.author.picture,
-  //     text: comment.text,
-  //     timestamp: comment.timestamp,
-  //     replied: isReply(comment.parent_id)
-  //   };
-  // };
-
   recursion(message);
 
   return (
