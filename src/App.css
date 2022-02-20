@@ -1,7 +1,8 @@
 :root {
+  background-color: var(--darkblue-color);
   --white-color: #fff;
-  --darkblue-color: #023167; 
-  --lightgrey-color: #edeef2;
+  --darkblue-color: #023168; 
+  --lightgrey-color: #eceef1;
   --gray-color: gray;
   --blue-reply-color: #014da5;
 }
@@ -12,8 +13,8 @@
 
 .avatar-logo {
   border: 1px solid var(--white-color);
-  height: 35px;
-  width: 35px;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -32,19 +33,18 @@
 }
 
 .App-body {
-  background-color: var(--darkblue-color);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 }
 
 .chat_window {
   background-color: var(--lightgrey-color);
-  width: 40vw;
-  min-height: 70vh;
-  border-radius: 5px;
+  position: absolute;
+  width: 1032px;
+  height: 864px;
+  left: 204px;
+  right: 204px;
+  top: 80px;
+  border-radius: 8px;
   padding: 1em;
 }
 
@@ -67,9 +67,12 @@
 }
 
 .message__date {
-  font-size: x-small;
-  color: var(--gray-color);
-  margin: 20px 0px 15px 0px;
+  position: static;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  color: #82878D;;
+  margin: 10px 0px 10px 0px;
 }
 
 .message__column2 {
@@ -80,10 +83,10 @@
 }
 
 .message__img {
-  margin: -40px 10px 0px 10px;
+  margin: -80px 12px 0px 10px;
   border: 1px solid var(--white-color);
-  height: 35px;
-  width: 35px;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -91,53 +94,74 @@
 
 .message__content {
   text-align: left;
-  margin-top: 15px;
   background-color: var(--white-color);
-  border: 1px solid black;
-  border-color: var(--white-color);
-  min-height: 8vh;
+  border: 1px solid #D8DEE7;
+  height: 104px;
   width: max-content;
-  max-width: 80%;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow-wrap: break-word;
-  padding: 10px 10px 10px 10px;
-  
+  padding: 10px 10px 0px 10px;
+  box-sizing: border-box;
 }
 
 .message__username {
-  font-weight: bold;
-  cursor: pointer;
-  padding-bottom: 10px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 12px 0px 12px 24px;
 }
 
 .message__text {
-  font-size: 14px;
-  color: var(--gray-color);
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #82878D;
+  padding: 0px 24px 24px 24px;
+  word-wrap: normal;
 }
 
 .message__time-reply {
-  margin-top: 10px;
+  margin-top: 12px;
+  margin-bottom: 24px;
   display: flex;
   flex-direction: row;
   text-align: left;
-  font-size: small;
-  color: var(--gray-color);
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #82878D;
 }
 
 .message__reply {
   margin-left: 5px;
-  color:  var(--blue-reply-color);
-  font-weight: bold;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #023168;
   cursor: pointer;
 }
 
 .new__message {
+  position: absolute;
+  height: 72px;
+  left: 32px;
+  right: 32px;
+  bottom: 32px;
   display: flex;
   flex-direction: row;
+  border: 1px solid #D8DEE7;
   background-color: var(--white-color);
-  z-index: 99;
   padding: 5px;
-  border-radius: 5px;
+  box-sizing: border-box;
+  border-radius: 8px;
 }
 
 .message__input {
@@ -152,16 +176,18 @@
 }
 
 .button__new {
-  border-radius: 5px;
-  width: 50px;
+  position: absolute;
+  border-radius: 6px;
+  width: 56px;
+  height: 56px;
   background-color: var(--darkblue-color);
   color: var(--white-color);
   cursor: pointer;
 }
 
 .button__send{
-  border-radius: 5px;
-  width: 200px;
+  border-radius: 6px;
+  width: 196px;
   background-color: var(--darkblue-color);
   color: var(--white-color);
   cursor: pointer;
@@ -171,5 +197,10 @@
   margin-right: 5px;
   height: 15px;
   width: 15px;
+}
+
+.button__positive{
+  margin: -4px;
+  filter: brightness(0) invert(1);
 }
 
